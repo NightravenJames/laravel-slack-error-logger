@@ -4,7 +4,9 @@
     "type": "library",
     "license": "MIT",
     "require": {
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^6.2",
+        "laravel/framework": ">=5.3.* <5.5.*",
+        "php": ">=5.6.4"
     },
     "authors": [
         {
