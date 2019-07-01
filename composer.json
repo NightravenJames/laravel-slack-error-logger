@@ -1,6 +1,6 @@
 {
     "name": "nevar/laravel-slack-error-logger",
-    "description": "Simple slack loggin package for lower laravel packages",
+    "description": "Simple slack error logger package for lower laravel packages",
     "type": "library",
     "license": "MIT",
     "require": {

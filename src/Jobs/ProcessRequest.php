@@ -16,6 +16,11 @@ class ProcessRequest implements ShouldQueue
     protected $body,$client,$route;
 
 
+    /**
+     * Instantiate class with request parameters
+     * 
+     * @param array $body, @param array $client, @param string $client
+     */
     public function __construct($body,$client,$route)
     {
         $this->client = $client;
@@ -25,6 +30,9 @@ class ProcessRequest implements ShouldQueue
     }
 
     
+    /**
+     * Handle slack api request
+     */
     public function handle()
     {
         $client = new Client($this->client);
