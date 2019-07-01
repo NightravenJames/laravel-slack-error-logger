@@ -1,5 +1,5 @@
 {
-    "name": "nevar/slack",
+    "name": "nevar/slack-error-logger",
     "description": "Simple slack loggin package for lower laravel packages",
     "type": "library",
     "license": "MIT",
