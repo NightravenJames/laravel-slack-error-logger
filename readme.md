@@ -6,7 +6,7 @@
 
 #### Also it would be a good idea to switch your queue driver from `QUEUE_DRIVER=sync` to `QUEUE_DRIVER=redis` when in a production environment.
 
-1. _Install_ `$ composer require nevar/laravel-slack-error-logger "@dev"`,
+1. _Install_ `composer require nevar/laravel-slack-error-logger "@dev"`,
 
 2. _Service Provider_ depending on your version of laravel copy and the following *code* to `config/app.php`,
 
@@ -20,7 +20,36 @@ return [
 ```
 *then run* `php artisan config:cache`.
 
-3. _Alias_ add the following alias to to `config/app.php`
+3. _Configurations_ run `php artisan vendor:publish --tag=raven-slack-error-logger` to publish the configuration file `config\slack.php` which should look like this.
+```php
+return [
+    /**
+     * ---------------------------------------------------------------------------------------------------
+     * slack base uri
+     * ---------------------------------------------------------------------------------------------------
+     */
+    'base_uri' => 'https://hooks.slack.com',
+
+    /**
+     * ---------------------------------------------------------------------------------------------------
+     * Enable\disable the error logger default is *true*
+     * ---------------------------------------------------------------------------------------------------
+     */
+    'enable_error_logging' => env('SLACK_ENABLE_ERROR_LOGGING',true),
+
+    /**
+     *  ---------------------------------------------------------------------------------------------------
+     * Your slack channel web hook visit https://api.slack.com/incoming-webhooks for more
+     * information on how to acquire one
+     *  ---------------------------------------------------------------------------------------------------
+     */
+    'error_web_hook' => env('SLACK_ERROR_WEBHOOK','/services/ABCD/EFGH/ijklmnopqrst')
+];
+```
+*then override with your own settings by adding* `SLACK_ENABLE_ERROR_LOGGING` and `SLACK_ERROR_WEBHOOK`
+
+
+4. _Alias_ add the following alias to to `config/app.php`
 
 ```php
 return [
@@ -39,7 +68,7 @@ return [
 ```
 *then run* `php artisan config:cache` *again*.
 
-4. _Implementation_ add the following line of code to your exception hander within `app\Exceptions\Handler.php`
+5. _Implementation_ add the following line of code to your exception hander within `app\Exceptions\Handler.php`
 
 ```php
     /**

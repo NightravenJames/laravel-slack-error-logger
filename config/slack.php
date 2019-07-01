@@ -1,7 +1,25 @@
 <?php
 
 return [
+    /**
+     * ---------------------------------------------------------------------------------------------------
+     * slack base uri
+     * ---------------------------------------------------------------------------------------------------
+     */
     'base_uri' => 'https://hooks.slack.com',
-    'enable_error_logging' => env('SLACK_ENABLE_ERROR_LOGGING',false),
-    'error_web_hook' => env('SLACK_ERROR_WEBHOOK','/services/THVDUPUMS/BKYU06G76/csZWpmad2f2WdgNq3V8SXy17')
+
+    /**
+     * ---------------------------------------------------------------------------------------------------
+     * Enable\disable the error logger default is *true*
+     * ---------------------------------------------------------------------------------------------------
+     */
+    'enable_error_logging' => env('SLACK_ENABLE_ERROR_LOGGING',true),
+
+    /**
+     *  ---------------------------------------------------------------------------------------------------
+     * Your slack channel web hook visit https://api.slack.com/incoming-webhooks for more
+     * information on how to acquire one
+     *  ---------------------------------------------------------------------------------------------------
+     */
+    'error_web_hook' => env('SLACK_ERROR_WEBHOOK','/services/ABCD/EFGH/ijklmnopqrst')
 ];

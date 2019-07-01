@@ -71,7 +71,7 @@ class SlackService {
         $body = $this->body = [
             'text' => "`$message`",
         ];
-        dispatch(new ProcessRequest($body,$this->client,$this->web_hook));
+        $this->enable_error_logging?dispatch(new ProcessRequest($body,$this->client,$this->web_hook)):null;
     }
 
 }

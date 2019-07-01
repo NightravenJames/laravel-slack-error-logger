@@ -16,7 +16,7 @@ class SlackServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../../config/slack.php' => config_path('slack.php'),
-        ],'raven-slack');
+        ],'raven-slack-error-logger');
     }
 
     /**
