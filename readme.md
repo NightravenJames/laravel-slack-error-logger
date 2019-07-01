@@ -4,7 +4,7 @@
 
 ### Note versions of laravel higher thatn _*5.5*_ already have this functionality inbuilt within them; so use this package when looking for a quick patch for this functionality.Otherwise update your laravel version.
 
-#### Also it would be a good idea to switch your queue driver from `QUEUE_DRIVER=sync` to `QUEUE_DRIVER=redis` when in a production environment.
+#### Also it would be a good idea to switch your queue driver from `QUEUE_DRIVER=sync` to `QUEUE_DRIVER=redis` when in a production environment (this package relies on laravel jobs)
 
 1. _Install_ `composer require nevar/laravel-slack-error-logger "@dev"`,
 
