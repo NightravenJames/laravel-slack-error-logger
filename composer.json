@@ -1,0 +1,21 @@
+{
+    "name": "raven/slack",
+    "description": "Simple slack loggin package for lower laravel packages",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "authors": [
+        {
+            "name": "James Ng'ang'a",
+            "email": "nightravenjames@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Raven\\Slack\\":"src/"
+        }
+    }
+}
